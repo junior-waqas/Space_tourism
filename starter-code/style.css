@@ -1,0 +1,1281 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bellefair&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --very-small-text: 1.2rem;
+    --small-text: 1.7rem;
+    --medium-text: 2rem;
+    --huge-text: 10rem;
+    --text-color: white;
+    --links-background: HSLA(213, 34%, 23%, 1);
+    --description-text-color: rgb(210, 216, 249);
+
+}
+
+body {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: var(--small-text);
+    color: white;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+
+}
+
+.home-body {
+    background: url(assets/home/background-home-desktop.jpg) no-repeat center/cover;
+}
+
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+header {
+    padding-top: 1%;
+    padding-left: 1rem;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    width: 60%;
+    height: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    font-size: 1.3rem;
+    letter-spacing: 5px;
+}
+
+/* slide in for nav */
+
+.nav-show{
+    transform: translateX(0);
+    display: flex;
+}
+
+/* hover underline */
+
+.links {
+    position: relative;
+}
+
+.links::after {
+    content: '';
+    border: none;
+    position: absolute;
+    left: 50%;
+    top: 48px;
+    width: 0;
+    height: 0;
+    transform: translateX(-50%);
+    transition: width 1s;
+}
+
+.links:hover::after {
+    width: 100%;
+    border: solid white 1px;
+}
+
+.ham-cancel-button{
+    font-size: 2rem;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 39px;
+}
+
+
+
+.hamburger{
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+}
+
+
+main {
+    height: 90%;
+    width: 100%;
+    padding-top: 10%;
+    display: flex;
+    flex-direction: row;
+}
+
+.left-text-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    /* align-items: center; */
+    width: 50%;
+
+    padding: 1.5vw 8vw;
+
+}
+
+.right-visual-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+
+    padding: 0 2rem;
+}
+
+.explore-button {
+    font-size: 1.4rem;
+    width: 15vw;
+    height: 15vw;
+    border: transparent;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color: black;
+}
+
+.explore-button:hover {
+    border: solid 2rem var(--description-text-color);
+    /* Add a specific border color on hover */
+}
+
+.small-grey {
+    color: rgb(210, 216, 249);
+    font-size: var(--small-text);
+}
+
+.huge-text {
+    font-size: var(--huge-text);
+    font-family: "Bellefair", serif;
+}
+
+.para-style {
+    font-size: var(--very-small-text);
+    color: rgb(210, 216, 249);
+    width: 55%;
+}
+
+
+/* Destination page styling */
+
+
+.des-body {
+    background: url(assets/destination/background-destination-desktop.jpg) no-repeat center / cover;
+}
+
+.destination-main {
+
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 4rem 10rem;
+    height: 85%;
+    overflow: hidden;
+}
+
+.hero-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.right-text {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    gap: 2rem;
+
+}
+
+.left-visual {
+    width: 20%;
+}
+
+.left-visual>img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.planet-selector {
+    display: flex;
+    gap: 2rem;
+
+}
+
+.planet-selector>a {
+    font-size: var(--medium-text);
+    color: var(--description-text-color);
+    position: relative;
+
+}
+
+
+
+.planet-selector>a::after {
+    content: '';
+    border: none;
+    position: absolute;
+    left: 50%;
+    top: 48px;
+    width: 0;
+    height: 0;
+    transform: translateX(-50%);
+    transition: width 1s;
+}
+
+.planet-selector>a:hover::after {
+    width: 100%;
+    border: solid white 1px;
+}
+
+.big-name {
+    font-size: 6rem;
+    font-family: "Bellefair", serif;
+}
+
+.planet-description {
+    font-size: 1.3rem;
+    color: var(--description-text-color);
+    line-height: 31px;
+    width: 70%;
+    padding-bottom: 1rem;
+    border-bottom: solid 2px;
+
+}
+
+.stats-box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.fact-boxes {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 70%;
+}
+
+.label {
+    color: var(--description-text-color);
+    font-size: 1.3rem;
+}
+
+.value {
+    font-family: "Bellefair", serif;
+}
+
+
+/* crew page styles  */
+
+.crew-body {
+    background: url(assets/crew/background-crew-desktop.jpg) no-repeat center/cover;
+}
+
+.crew-main {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 0 10%;
+    position: relative;
+}
+
+.crew-text {
+    width: 50%;
+    height: 64%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.crew-meet-text {
+    font-size: 2rem;
+    font-family: "Barlow Condensed", sans-serif;
+}
+
+.crew-rank {
+    font-family: ui-sans-serif, system-ui, -apple-system;
+    font-size: 2.5rem;
+    opacity: 0.5;
+}
+
+.crew-name {
+
+    font-family: ui-sans-serif, system-ui, -apple-system;
+    font-size: 3rem;
+}
+
+.crew-description {
+    color: var(--description-text-color);
+    width: 54%;
+    font-size: 1.2rem;
+    line-height: 1.7rem;
+}
+
+.about-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.crew-pic-box {
+    display: flex;
+    width: 30%;
+    position: absolute;
+    bottom: 0px;
+    left: 62%;
+    height: 70%;
+    /* border: solid; */
+}
+
+
+
+.crew-pic {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+}
+
+.circle-button {
+    width: 15px;
+    height: 15px;
+    border-radius: 20px;
+    border: transparent;
+    background: rgb(210, 216, 249);
+    cursor: pointer;
+}
+
+.crew-slide-box {
+    display: flex;
+    gap: 1rem;
+}
+
+/* tech place style */
+
+.tech-body {
+
+    background: url(assets/technology/background-technology-desktop.jpg) no-repeat center/cover;
+}
+
+.tech-main {
+    height: 80%;
+    width: 100%;
+
+    padding: 4rem 0rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.tech-label {
+    font-size: 2rem;
+    margin-left: 12vw;
+}
+
+
+.tech-button {
+
+    width: 4rem;
+    height: 4rem;
+    border-radius: 2rem;
+    background: transparent;
+    border: 1px solid var(--description-text-color);
+    color: white;
+    font-size: 1 rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.tech-buttons-box {
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    width: 9%;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+}
+
+.terminology-para {
+    font-size: 1rem;
+    color: var(--description-text-color);
+}
+
+.rock-info-box {
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+
+}
+
+.tech-text-box {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    gap: 1rem;
+}
+
+.tech-content-box {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    width: 100%;
+
+    height: 100%;
+}
+
+.rocket-Pic-box {
+    width: 30%;
+    height: 70%;
+
+
+}
+
+.rocket-pic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.rocket-name {
+    font-family: "Bellefair", serif;
+    font-size: 4rem;
+}
+
+.rocket-details {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--description-text-color);
+}
+
+.black-white {
+    color: black;
+    background-color: white;
+}
+
+/* homepage media queies */
+
+@media (max-width: 550px) {
+
+    .home-body {
+        background-image: url(assets/home/background-home-mobile.jpg);
+    }
+
+  
+
+    .hamburger {
+        display: block;
+    }
+
+    nav {
+        position: fixed;
+        height: 100vh;
+        top: 0;
+        right: 0;
+        width: 60vw;
+        /* display: none; */
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        transform: translateX(100%); 
+        transition: transform 0.3s ease;
+        gap: 4rem;
+        padding: 4rem;
+        z-index: 1;
+    }
+
+    main {
+        flex-direction: column;
+        padding-top: 5%
+    }
+
+    .left-text-area {
+        align-items: center;
+        width: 100%;
+        gap: 1rem;
+        height: 30%;
+        height: 55%;
+    }
+
+    .huge-text {
+        font-size: 6rem;
+    }
+
+    .small-grey {
+        font-size: var(--very-small-text);
+    }
+
+    .right-visual-area {
+        justify-content: start;
+        width: 100%;
+
+    }
+
+    .explore-button {
+        width: 30vw;
+        height: 30vw;
+
+
+    }
+
+
+
+    .para-style {
+        text-align: center;
+        font-size: 1rem;
+        line-height: 30px;
+        width: 100%;
+    }
+
+
+    /* destination page media queries  */
+
+    .des-body {
+        background: url(assets/destination/background-destination-mobile.jpg) no-repeat center/cover;
+    }
+
+
+    .destination-main {
+        padding: 1rem 0;
+        width: 100%;
+        height: 90%;
+        align-items: center;
+    }
+
+    .hero-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left-visual {
+        width: 40%;
+        height: 43%;
+    }
+
+    .right-text {
+        width: 100%;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .planet-description {
+        width: 82%;
+        font-size: 1.1rem;
+    }
+
+    .planet-selector>a {
+        font-size: 1.3rem;
+    }
+
+    .stats-box {
+        align-items: center;
+        width: 100%;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .fact-boxes {
+        align-items: center;
+    }
+
+    .big-name {
+        font-size: 4rem;
+    }
+
+    /*  crew page style */
+
+    .crew-body {
+        background: url(assets/crew/background-crew-mobile.jpg) no-repeat center/cover;
+    }
+
+    .crew-main {
+        flex-direction: column-reverse;
+        gap: 3rem;
+        width: 100%;
+        padding-top: 6rem;
+        justify-content: space-between;
+    }
+
+    .crew-text {
+        width: 100%;
+        height: 64%;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 4rem;
+        align-items: center;
+    }
+
+    .crew-pic-box {
+        position: static;
+    }
+
+    .crew-pic {
+        border-bottom: solid 2px rgb(210, 216, 249);
+        object-fit: contain;
+    }
+
+    .crew-meet-text {
+        position: absolute;
+        top: 43px;
+    }
+
+    .crew-pic-box {
+        position: static;
+        width: 100%;
+        height: 45%;
+    }
+
+    .crew-slide-box {
+        display: flex;
+        gap: 1rem;
+        position: absolute;
+        top: 25rem;
+    }
+
+    .crew-name {
+
+        font-size: 2.5rem;
+    }
+
+    .crew-rank {
+        font-size: 1.5rem;
+    }
+
+    .crew-description {
+        font-size: 1rem;
+        line-height: 1.7rem;
+        width: 100%;
+    }
+
+    .horizontal-line {
+        width: 57%;
+        height: 2px;
+        display: flex;
+        background-color: white;
+        position: absolute;
+        top: 24rem;
+        left: 7rem;
+
+    }
+
+    /* tech page styles */
+
+    .tech-body {
+        background: url(assets/technology/background-technology-mobile.jpg) no-repeat center/cover;
+    }
+
+    .tech-main {
+        height: 87%;
+        justify-content: start;
+        padding: 2rem 0;
+    }
+
+    .tech-label {
+        font-size: 2rem;
+
+        text-align: center;
+        width: 95%;
+        margin-left: 0;
+
+    }
+
+    .tech-content-box {
+        flex-direction: column;
+        gap: 2rem;
+        justify-content: space-evenly;
+        height: 93%;
+
+    }
+
+    .tech-buttons-box {
+        flex-direction: row;
+        width: 100%;
+        height: 12%;
+        gap: 1rem;
+        justify-content: center;
+        order: 2;
+
+    }
+
+    .tech-button {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 1.5rem;
+    }
+
+    .tech-text-box {
+        display: flex;
+        flex-direction: column;
+        width: 83%;
+
+        text-align: center;
+        order: 3;
+    }
+
+    .rocket-name {
+        font-size: 2rem;
+    }
+
+    .rocket-details {
+        font-size: 1rem;
+    }
+
+    .rocket-Pic-box {
+
+        width: 100%;
+        height: 39vw;
+        order: 1;
+    }
+
+    .rocket-pic {
+        object-fit: cover;
+    }
+}
+
+/* tablet media query */
+@media (min-width: 550px) and (max-width: 768px) {
+    .home-body {
+        background-image: url(assets/home/background-home-tablet.jpg);
+    }
+
+
+    nav {
+        font-size: var(--very-small-text);
+        width: 75%;
+        font-size: 1rem;
+    }
+
+    .hamburger{
+        display: none;
+    }
+    
+    header {
+
+        height: 8%;
+    }
+
+    main {
+        flex-direction: column;
+        padding-top: 5%
+    }
+
+    .left-text-area {
+        align-items: center;
+        width: 100%;
+        gap: 1rem;
+        height: 30%;
+
+        height: 55%;
+    }
+
+    .huge-text {
+        font-size: 6rem;
+    }
+
+    .small-grey {
+        font-size: 1.5rem;
+    }
+
+    .right-visual-area {
+        height: 55%;
+        width: 100%;
+
+
+    }
+
+    .explore-button {
+        width: 25vw;
+        height: 25vw;
+    }
+
+    .para-style {
+        text-align: center;
+        font-size: 1rem;
+        line-height: 30px;
+        width: 100%;
+    }
+
+    /* des page styling */
+
+    .des-body {
+        background: url(assets/destination/background-destination-tablet.jpg) no-repeat center/cover;
+    }
+
+
+    .destination-main {
+        padding: 1rem 0;
+        width: 100%;
+        height: 90%;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .hero-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .left-visual {
+        width: 35%;
+
+        height: 40%;
+    }
+
+    .right-text {
+        width: 100%;
+        align-items: center;
+        height: 60%;
+        gap: 1rem;
+    }
+
+    .planet-description {
+        width: 82%;
+        font-size: 1.2rem;
+    }
+
+    .planet-selector>a {
+        font-size: 1.3rem;
+    }
+
+    .stats-box {
+        align-items: center;
+        width: 100%;
+
+
+    }
+
+    .fact-boxes {
+        align-items: center;
+    }
+
+    /* crew page styles */
+
+
+    .crew-body {
+        background: url(assets/crew/background-crew-mobile.jpg) no-repeat center/cover;
+    }
+
+    .crew-main {
+        flex-direction: column-reverse;
+        gap: 3rem;
+        width: 100%;
+        padding-top: 6rem;
+        justify-content: space-between;
+    }
+
+    .crew-text {
+        width: 100%;
+        height: 64%;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 4rem;
+        align-items: center;
+    }
+
+    .crew-pic-box {
+        position: static;
+    }
+
+    .crew-meet-text {
+        position: absolute;
+        top: 43px;
+    }
+
+    .crew-pic-box {
+        position: static;
+        width: 100%;
+        height: 45%;
+    }
+
+    .crew-pic {
+        border-bottom: solid 2px rgb(210, 216, 249);
+    }
+
+    .crew-slide-box {
+        display: flex;
+        gap: 1rem;
+        position: absolute;
+        top: 25rem;
+    }
+
+    .crew-name {
+
+        font-size: 3rem;
+    }
+
+    .crew-rank {
+        font-size: 1.5rem;
+    }
+
+    .crew-description {
+        font-size: 1.4rem;
+        line-height: 1.7rem;
+        width: 100%;
+    }
+
+    .circle-button {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* tech styling */
+
+    /* tech page styles */
+
+    .tech-body {
+        background: url(assets/technology/background-technology-tablet.jpg) no-repeat center/cover;
+    }
+
+    .tech-main {
+        height: 87%;
+        justify-content: start;
+        padding: 2rem 0;
+        gap: 1rem;
+    }
+
+    .tech-label {
+        font-size: 2rem;
+
+        text-align: center;
+        width: 95%;
+        margin-left: 0;
+
+    }
+
+    .tech-content-box {
+        flex-direction: column;
+
+        justify-content: space-evenly;
+        height: 93%;
+
+    }
+
+    .tech-buttons-box {
+        flex-direction: row;
+        width: 100%;
+        height: 12%;
+        gap: 1rem;
+        justify-content: center;
+        order: 2;
+
+    }
+
+    .tech-button {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 1.5rem;
+    }
+
+    .tech-text-box {
+        display: flex;
+        flex-direction: column;
+        width: 83%;
+
+        text-align: center;
+        order: 3;
+    }
+
+    .rocket-name {
+        font-size: 2rem;
+    }
+
+    .rocket-details {
+        font-size: 1rem;
+        line-height: 1.4rem;
+    }
+
+    .rocket-Pic-box {
+
+        width: 100%;
+        height: 39vw;
+        order: 1;
+
+    }
+
+    .rocket-pic {
+        object-fit: cover;
+    }
+
+
+
+
+}
+
+/* Styles for tablets and smaller laptops */
+@media (min-width: 769px) and (max-width: 992px) {
+
+    .home-body {
+        background-image: url(assets/home/background-home-tablet.jpg);
+    }
+
+    main {
+        height: 60%;
+        padding-top: 7%;
+    }
+
+    nav {
+        font-size: 1.2rem;
+    }
+
+    .left-text-area {
+        gap: 2rem;
+        padding: 1.5vw 8vw;
+    }
+
+    .huge-text {
+        font-size: 6rem;
+    }
+
+    .explore-button {
+        width: 25vw;
+        height: 25vw;
+    }
+
+    .para-style {
+        width: 100%;
+    }
+
+    /* des page styling  */
+
+    .des-body {
+        background: url(assets/destination/background-destination-tablet.jpg) no-repeat center/cover;
+    }
+
+
+    .destination-main {
+        padding: 1rem 0;
+        width: 100%;
+        height: 90%;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .hero-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .left-visual {
+        width: 35%;
+
+        height: 40%;
+    }
+
+    .right-text {
+        width: 100%;
+        align-items: center;
+        height: 60%;
+        gap: 1rem;
+    }
+
+    .planet-description {
+        width: 82%;
+        font-size: 1.2rem;
+    }
+
+    .planet-selector>a {
+        font-size: 1.7rem;
+    }
+
+    .stats-box {
+        align-items: center;
+        width: 100%;
+
+
+    }
+
+    .fact-boxes {
+        align-items: center;
+    }
+
+
+    /* crew styles */
+
+    .crew-body {
+        background: url(assets/crew/background-crew-tablet.jpg) no-repeat center/cover;
+    }
+
+    .crew-main {
+        flex-direction: column-reverse;
+        gap: 3rem;
+        width: 100%;
+        padding-top: 6rem;
+        justify-content: space-between;
+    }
+
+    .crew-text {
+        width: 100%;
+        height: 64%;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 4rem;
+        align-items: center;
+    }
+
+
+    .crew-meet-text {
+        position: absolute;
+        top: 43px;
+    }
+
+    .crew-slide-box {
+        display: flex;
+        gap: 1rem;
+        position: absolute;
+        top: 25rem;
+    }
+
+    .crew-name {
+
+        font-size: 3rem;
+    }
+
+    .crew-rank {
+        font-size: 1.5rem;
+    }
+
+    .crew-description {
+        font-size: 1.4rem;
+        line-height: 1.7rem;
+        width: 100%;
+    }
+
+    .circle-button {
+        width: 20px;
+        height: 20px;
+    }
+
+    .crew-pic {
+        border-bottom: solid 2px rgb(210, 216, 249);
+    }
+
+    .crew-pic-box {
+        position: static;
+        width: 100%;
+        height: 45%;
+    }
+
+    /* tech page styles */
+
+    .tech-body {
+        background: url(assets/technology/background-technology-tablet.jpg) no-repeat center/cover;
+    }
+
+    .tech-main {
+        height: 87%;
+        justify-content: start;
+        padding: 2rem 0;
+        gap: 1rem;
+    }
+
+    .tech-label {
+        font-size: 2rem;
+
+        text-align: center;
+        width: 95%;
+        margin-left: 0;
+
+    }
+
+    .tech-content-box {
+        flex-direction: column;
+
+        justify-content: space-evenly;
+        height: 93%;
+
+    }
+
+    .tech-buttons-box {
+        flex-direction: row;
+        width: 100%;
+        height: 12%;
+        gap: 1rem;
+        justify-content: center;
+        order: 2;
+
+    }
+
+    .tech-button {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 1.5rem;
+    }
+
+    .tech-text-box {
+        display: flex;
+        flex-direction: column;
+        width: 83%;
+
+        text-align: center;
+        order: 3;
+    }
+
+    .rocket-name {
+        font-size: 2rem;
+    }
+
+    .rocket-details {
+        font-size: 1rem;
+        line-height: 1.4rem;
+    }
+
+    .rocket-Pic-box {
+
+        width: 100%;
+        height: 29vw;
+        order: 1;
+
+    }
+
+    .rocket-pic {
+        object-fit: cover;
+    }
+
+
+}
+
+/* 
+addditional media */
+
+@media (min-width: 993px) and (max-width: 1300px) {
+    .left-visual {
+        width: 30%;
+    }
+
+    .destination-main {
+        padding: 4rem 5rem;
+    }
+}
+
+.hidden {
+    display: none;
+}
